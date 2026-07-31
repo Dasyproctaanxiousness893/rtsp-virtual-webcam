@@ -1,0 +1,6 @@
+pyvirtualcam>=0.11
+numpy
+sounddevice
+
+# فقط برای ساخت فایل exe مستقل لازمه (نه برای اجرای معمولی برنامه):
+# pyinstaller
