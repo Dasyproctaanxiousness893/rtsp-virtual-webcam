@@ -1,0 +1,11 @@
+{
+  "rtsp_url": "rtsp://username:password@192.168.1.50:554/stream1",
+  "rtsp_transport": "tcp",
+  "audio_output_device": "CABLE Input (VB-Audio Virtual Cable)",
+  "reconnect_delay_seconds": 3,
+  "video_delay_ms": 0,
+  "audio_delay_ms": 0,
+  "hwaccel": "auto",
+  "video_backend": "unitycapture",
+  "debug": false
+}
