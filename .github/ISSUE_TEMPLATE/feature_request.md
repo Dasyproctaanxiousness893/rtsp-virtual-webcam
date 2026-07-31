@@ -1,11 +1,10 @@
 ---
-
 name: Feature Request
 about: Suggest an idea or improvement for RTSP Virtual Webcam
 title: "[Feature] "
 labels: enhancement
 assignees: ""
--------------
+---
 
 ## Problem
 
