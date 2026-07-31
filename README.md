@@ -68,10 +68,12 @@ If you want to run RTSP Virtual Webcam directly from source, you will need:
 The camera is read over two independent RTSP connections, because the video
 and audio are consumed by two separate FFmpeg processes:
 
-```
+```text
 RTSP camera --(video, FFmpeg)--> raw frames --> virtual webcam (UnityCapture / OBS)
 RTSP camera --(audio, FFmpeg)--> raw PCM   --> virtual microphone (VB-CABLE)
 ```
+
+```text
                  ┌──────────────┐
                  │  IP Camera   │
                  │    RTSP      │
@@ -90,7 +92,7 @@ RTSP camera --(audio, FFmpeg)--> raw PCM   --> virtual microphone (VB-CABLE)
               └─────────┬─────────┘
                         │
              Google Meet / Zoom / ...
-
+```
 
 Both processes are supervised by a small Python engine (`engine.py`) that
 reconnects on failure and optionally delays one stream relative to the other
