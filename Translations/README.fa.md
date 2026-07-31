@@ -5,7 +5,6 @@
 که از دوربین/میکروفون استاندارد ویندوز می‌خونه.
 
 [![Latest Release](https://img.shields.io/github/v/release/Rahideh/rtsp-virtual-webcam)](https://github.com/Rahideh/rtsp-virtual-webcam/releases)
-[![GitHub Stars](https://img.shields.io/github/stars/Rahideh/rtsp-virtual-webcam)](https://github.com/Rahideh/rtsp-virtual-webcam/stargazers)
 [![License](https://img.shields.io/github/license/Rahideh/rtsp-virtual-webcam)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows-blue)](https://github.com/Rahideh/rtsp-virtual-webcam)
 
