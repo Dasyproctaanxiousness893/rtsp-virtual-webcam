@@ -1,0 +1,26 @@
+# Local configuration — contains the camera's RTSP URL, which typically
+# includes a username and password. This must never be committed.
+config.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# Installer build output and downloaded third-party binaries
+# (see installer/PACKAGING.md — these are fetched at build time, not stored in git)
+installer/Output/
+installer/files/*.exe
+installer/files/*.dll
+
+# Editor / OS noise
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
