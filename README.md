@@ -4,7 +4,16 @@ Turn any RTSP IP camera into a virtual webcam and microphone that any
 application can use — Google Meet, Zoom, Teams, Discord, OBS, whatever reads
 from a standard camera/microphone device on Windows.
 
+[![Latest Release](https://img.shields.io/github/v/release/Rahideh/rtsp-virtual-webcam)](https://github.com/Rahideh/rtsp-virtual-webcam/releases)
+[![GitHub Stars](https://img.shields.io/github/stars/Rahideh/rtsp-virtual-webcam)](https://github.com/Rahideh/rtsp-virtual-webcam/stargazers)
+[![License](https://img.shields.io/github/license/Rahideh/rtsp-virtual-webcam)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Windows-blue)](https://github.com/Rahideh/rtsp-virtual-webcam)
+
 Persian translation: [Translations/README.fa.md](Translations/README.fa.md)
+
+## Demo
+
+![RTSP Virtual Webcam Demo](images/demo.gif)
 
 ## Why this exists
 
@@ -29,6 +38,31 @@ installer, and nothing else.
   (installing VB-CABLE, which cannot legally be bundled — see
   [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)).
 
+## Requirements
+
+### Using the Windows Installer
+
+The installer is the recommended way to use RTSP Virtual Webcam. You only need:
+
+- Windows 10 or 11 (64-bit)
+- An IP camera that provides an RTSP stream
+- [VB-Audio VB-CABLE](https://vb-audio.com/Cable/) for virtual microphone support
+
+The installer automatically handles the virtual webcam driver setup. FFmpeg and
+the required application components are included with the packaged application.
+
+### Running from Source
+
+If you want to run RTSP Virtual Webcam directly from source, you will need:
+
+- Windows 10 or 11 (64-bit)
+- Python 3.10+
+- [FFmpeg](https://www.gyan.dev/ffmpeg/builds/) (`ffmpeg.exe` and `ffprobe.exe`)
+- [UnityCapture](https://github.com/schellingb/UnityCapture) (default) or
+  [OBS Studio](https://obsproject.com/) as the virtual webcam backend
+- [VB-Audio VB-CABLE](https://vb-audio.com/Cable/) for virtual microphone support
+- An IP camera that provides an RTSP stream (H.264 video is recommended)
+
 ## How it works
 
 The camera is read over two independent RTSP connections, because the video
@@ -38,23 +72,29 @@ and audio are consumed by two separate FFmpeg processes:
 RTSP camera --(video, FFmpeg)--> raw frames --> virtual webcam (UnityCapture / OBS)
 RTSP camera --(audio, FFmpeg)--> raw PCM   --> virtual microphone (VB-CABLE)
 ```
+                 ┌──────────────┐
+                 │  IP Camera   │
+                 │    RTSP      │
+                 └──────┬───────┘
+                        │
+              ┌─────────┴─────────┐
+              │                   │
+           Video                Audio
+              │                   │
+           FFmpeg              FFmpeg
+              │                   │
+        UnityCapture          VB-CABLE
+              │                   │
+       Virtual Webcam      Virtual Microphone
+              │                   │
+              └─────────┬─────────┘
+                        │
+             Google Meet / Zoom / ...
+
 
 Both processes are supervised by a small Python engine (`engine.py`) that
 reconnects on failure and optionally delays one stream relative to the other
 to keep them in sync. See [`engine.py`](engine.py) for the implementation.
-
-## Requirements
-
-- Windows 10 or 11 (64-bit).
-- An IP camera that exposes an RTSP stream (H.264 video is expected; most
-  consumer and business IP cameras support this).
-- [FFmpeg](https://www.gyan.dev/ffmpeg/builds/) (`ffmpeg.exe`, `ffprobe.exe`).
-- [UnityCapture](https://github.com/schellingb/UnityCapture) (default) or
-  [OBS Studio](https://obsproject.com/) as the virtual webcam backend.
-- [VB-Audio VB-CABLE](https://vb-audio.com/Cable/) for the virtual
-  microphone.
-- Python 3.10+ — only if running from source. Not required if you use the
-  installer.
 
 ## Installation
 
@@ -104,6 +144,16 @@ driver), and set `"video_backend": "obs"` in `config.json`.
 Download and run the installer from
 [vb-audio.com/Cable](https://vb-audio.com/Cable/), then reboot. This creates
 two audio devices: `CABLE Input` (playback) and `CABLE Output` (recording).
+
+## Quick Start
+
+1. Download the latest installer from [Releases](../../releases).
+2. Install RTSP Virtual Webcam.
+3. Install VB-Audio VB-CABLE when prompted.
+4. Enter your camera's RTSP URL.
+5. Start the stream.
+6. Select `RTSP Virtual Webcam` as the camera in Google Meet, Zoom, Teams, or another application.
+7. Select the VB-CABLE recording device as the microphone if audio is enabled.
 
 ## Configuration
 
@@ -157,6 +207,25 @@ python main.py
 
 Reads `config.json` from the current directory (or a path passed via
 `--config`).
+
+## Tested With
+
+### Cameras
+
+- H.264 RTSP IP cameras
+
+### Applications
+
+- Google Meet
+- Zoom
+- Microsoft Teams
+- Discord
+- OBS Studio
+
+### Windows
+
+- Windows 10 64-bit
+- Windows 11 64-bit
 
 ## Troubleshooting
 

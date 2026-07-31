@@ -21,7 +21,7 @@ RTSP credentials. Redact the username/password before sharing.
 ## Development setup
 
 ```
-git clone https://github.com/Rahideh/REPO-NAME-HERE.git
+git clone https://github.com/Rahideh/rtsp-virtual-webcam.git
 cd REPO-NAME-HERE
 pip install -r requirements.txt
 ```

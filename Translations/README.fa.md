@@ -4,7 +4,16 @@
 می‌تونه ازش استفاده کنه — گوگل میت، زوم، تیمز، دیسکورد، یا هر برنامه‌ی دیگه‌ای
 که از دوربین/میکروفون استاندارد ویندوز می‌خونه.
 
+[![Latest Release](https://img.shields.io/github/v/release/Rahideh/rtsp-virtual-webcam)](https://github.com/Rahideh/rtsp-virtual-webcam/releases)
+[![GitHub Stars](https://img.shields.io/github/stars/Rahideh/rtsp-virtual-webcam)](https://github.com/Rahideh/rtsp-virtual-webcam/stargazers)
+[![License](https://img.shields.io/github/license/Rahideh/rtsp-virtual-webcam)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Windows-blue)](https://github.com/Rahideh/rtsp-virtual-webcam)
+
 نسخه‌ی انگلیسی (اصلی): [../README.md](../README.md)
+
+## دمو
+
+![RTSP Virtual Webcam Demo](../images/demo.gif)
 
 ## چرا این پروژه ساخته شد
 
@@ -30,6 +39,33 @@ reconnect، و یه نصب‌کننده — و نه چیز بیشتر.
   [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md) مراجعه کنید) راهنمایی
   می‌کنه.
 
+  ## پیش‌نیازها
+
+### استفاده از فایل نصب ویندوز
+
+استفاده از فایل نصب، روش پیشنهادی برای اجرای RTSP Virtual Webcam است. برای
+استفاده از نسخه نصبی فقط به موارد زیر نیاز دارید:
+
+- ویندوز 10 یا 11 (۶۴ بیتی)
+- یک دوربین تحت شبکه که استریم RTSP ارائه دهد
+- [VB-Audio VB-CABLE](https://vb-audio.com/Cable/) برای استفاده از میکروفون مجازی
+
+نصب‌کننده، راه‌اندازی درایور وب‌کم مجازی را به‌صورت خودکار انجام می‌دهد.
+FFmpeg و سایر اجزای موردنیاز برنامه نیز در نسخه بسته‌بندی‌شده قرار دارند.
+
+### اجرای برنامه از سورس
+
+اگر می‌خواهید RTSP Virtual Webcam را مستقیماً از سورس اجرا کنید، به موارد زیر
+نیاز خواهید داشت:
+
+- ویندوز 10 یا 11 (۶۴ بیتی)
+- Python نسخه 3.10 یا بالاتر
+- [FFmpeg](https://www.gyan.dev/ffmpeg/builds/) (`ffmpeg.exe` و `ffprobe.exe`)
+- [UnityCapture](https://github.com/schellingb/UnityCapture) (پیش‌فرض) یا
+  [OBS Studio](https://obsproject.com/) به‌عنوان Backend وب‌کم مجازی
+- [VB-Audio VB-CABLE](https://vb-audio.com/Cable/) برای استفاده از میکروفون مجازی
+- یک دوربین تحت شبکه که استریم RTSP ارائه دهد (ویدئوی H.264 توصیه می‌شود)
+
 ## نحوه‌ی کارکرد
 
 دوربین از طریق دو اتصال مستقل RTSP خونده می‌شه، چون تصویر و صدا هرکدوم توسط
@@ -43,18 +79,6 @@ reconnect، و یه نصب‌کننده — و نه چیز بیشتر.
 هر دو فرایند توسط یک هسته‌ی کوچیک پایتون (`engine.py`) مدیریت می‌شن که در
 صورت قطعی reconnect می‌کنه و در صورت نیاز یکی از دو مسیر رو با دیگری هم‌گام
 می‌کنه. برای پیاده‌سازی به [`engine.py`](../engine.py) مراجعه کنید.
-
-## پیش‌نیازها
-
-- ویندوز ۱۰ یا ۱۱ (۶۴ بیتی).
-- یک دوربین IP که استریم RTSP بده (ویدیوی H.264 مورد انتظاره؛ اکثر دوربین‌های
-  خانگی و تجاری این رو پشتیبانی می‌کنن).
-- [FFmpeg](https://www.gyan.dev/ffmpeg/builds/) (`ffmpeg.exe`, `ffprobe.exe`).
-- [UnityCapture](https://github.com/schellingb/UnityCapture) (پیش‌فرض) یا
-  [OBS Studio](https://obsproject.com/) به‌عنوان درایور دوربین مجازی.
-- [VB-Audio VB-CABLE](https://vb-audio.com/Cable/) برای میکروفون مجازی.
-- پایتون ۳٫۱۰ به بالا — فقط در صورت اجرا از سورس؛ اگه از نصب‌کننده استفاده
-  می‌کنید لازم نیست.
 
 ## نصب
 
@@ -105,6 +129,16 @@ FFmpeg، UnityCapture (یا OBS Studio)، و VB-CABLE رو دستی نصب کن�
 از [vb-audio.com/Cable](https://vb-audio.com/Cable/) دانلود و نصب کنید، بعد
 ری‌استارت کنید. این کار دو دستگاه صوتی می‌سازه: `CABLE Input` (پخش) و
 `CABLE Output` (ضبط).
+
+## شروع سریع
+
+1. آخرین نسخه برنامه را از صفحه [Releases](../../releases) دانلود کنید.
+2. فایل نصب را اجرا کرده و **RTSP Virtual Webcam** را نصب کنید.
+3. در صورت درخواست، **VB-Audio VB-CABLE** را نصب کنید.
+4. آدرس RTSP دوربین خود را وارد کنید.
+5. دستگاه صوتی موردنظر را انتخاب کرده و استریم را اجرا کنید.
+6. در Google Meet، Zoom، Microsoft Teams، Discord یا OBS، گزینه **RTSP Virtual Webcam** را به‌عنوان دوربین انتخاب کنید.
+7. برای استفاده از صدای دوربین، دستگاه **CABLE Output** را به‌عنوان میکروفون انتخاب کنید.
 
 ## تنظیمات
 
