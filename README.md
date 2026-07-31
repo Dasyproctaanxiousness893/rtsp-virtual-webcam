@@ -50,6 +50,17 @@ The installer is the recommended way to use RTSP Virtual Webcam. You only need:
 The installer automatically handles the virtual webcam driver setup. FFmpeg and
 the required application components are included with the packaged application.
 
+## Quick Start
+
+1. Download the latest installer from [Releases](../../releases).
+2. Install RTSP Virtual Webcam.
+3. Install VB-Audio VB-CABLE when prompted.
+4. Enter your camera's RTSP URL.
+5. Start the stream.
+6. Select `RTSP Virtual Webcam` as the camera in Google Meet, Zoom, Teams, or another application.
+7. Select the VB-CABLE recording device as the microphone if audio is enabled.
+
+
 ### Running from Source
 
 If you want to run RTSP Virtual Webcam directly from source, you will need:
@@ -145,16 +156,6 @@ driver), and set `"video_backend": "obs"` in `config.json`.
 Download and run the installer from
 [vb-audio.com/Cable](https://vb-audio.com/Cable/), then reboot. This creates
 two audio devices: `CABLE Input` (playback) and `CABLE Output` (recording).
-
-## Quick Start
-
-1. Download the latest installer from [Releases](../../releases).
-2. Install RTSP Virtual Webcam.
-3. Install VB-Audio VB-CABLE when prompted.
-4. Enter your camera's RTSP URL.
-5. Start the stream.
-6. Select `RTSP Virtual Webcam` as the camera in Google Meet, Zoom, Teams, or another application.
-7. Select the VB-CABLE recording device as the microphone if audio is enabled.
 
 ## Configuration
 
