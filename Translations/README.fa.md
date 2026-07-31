@@ -94,8 +94,8 @@ UnityCapture رو ثبت می‌کنه و برای نصب VB-CABLE (به دلا�
 ### روش ب: اجرا از سورس
 
 ```
-git clone https://github.com/Rahideh/REPO-NAME-HERE.git
-cd REPO-NAME-HERE
+git clone https://github.com/Rahideh/rtsp-virtual-webcam.git
+cd rtsp-virtual-webcam
 pip install -r requirements.txt
 ```
 
