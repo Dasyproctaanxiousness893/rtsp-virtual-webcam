@@ -109,8 +109,8 @@ manual step, for licensing reasons — see
 ### Option B: Run from source
 
 ```
-git clone https://github.com/Rahideh/REPO-NAME-HERE.git
-cd REPO-NAME-HERE
+git clone https://github.com/Rahideh/rtsp-virtual-webcam.git
+cd rtsp-virtual-webcam
 pip install -r requirements.txt
 ```
 
