@@ -1,6 +1,6 @@
-pyvirtualcam>=0.11
-numpy
-sounddevice
+numpy==2.5.1
+pyvirtualcam==0.15.0
+sounddevice==0.5.5
 
 # فقط برای ساخت فایل exe مستقل لازمه (نه برای اجرای معمولی برنامه):
 # pyinstaller
